@@ -48,9 +48,8 @@ public class BookService {
             book.setName(name);
         }
         if (author != null && author.length() > 0 && !Objects.equals(book.getAuthor(), author)) {
-            Optional<Book> bookOptional = bookRepository.findBookByName(name);
+            book.setAuthor(author);
         }
-        book.setAuthor(author);
         if (length != null && length > 0 && !Objects.equals(book.getLength(), length)) {
             book.setLength(length);
         }
